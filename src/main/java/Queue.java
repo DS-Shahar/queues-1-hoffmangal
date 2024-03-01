@@ -1,57 +1,78 @@
-public class Queue<T>
-{
-  private Node<T> first;
-  private Node<T> last;
-
-  public Queue()
-  {
-    this.first = null;
-    this.last = null;
-  }
-
-  public void insert(T x)
-  {
-    Node<T> temp = new Node<T>(x);
-    if (first == null)
-      first = temp;
-    else
-      last.setNext(temp);
-    last = temp;
-  }
-
-  public T remove()
-  {
-    T x = first.getValue();
-    first = first.getNext();
-    if (first == null)
-      last = null;
-    return x;
-  }
-
-  public T head()
-  {
-    return first.getValue();
-  }
-
-  public boolean isEmpty()
-  {
-    return first == null;
-  }
-
-  public String toString()
-  {
-    if (isEmpty())
-      return "[]";
-    String s = "[";
-    insert(null);
-    T temp = remove();
-    while (temp != null) {
-      s += temp;
-      insert(temp);
-      temp = remove();
-      if (temp != null)
-        s += ", ";
-    }
-    return s + "]";
-  }
+Public static queue<T> inQueue(Queue<T> q){
+Queue<T> q1 = new Queue<T>();
+Queue<T> q2 = new Queue<T>();
+While(!q.isEmpty()){
+T x =q.remove;
+q1.insert(x);
+q2.insert(x);
 }
+While(!q2.isEmpty()){
+T a =q2.remove();
+q.insert(a);
+} 
+Return q1;
+}
+
+
+Public static <T> Boolean isSeq(Queue<T> q1, T b){
+Queue<T> q = inqueue(q1);
+Int count=0,max=0;
+While(!q.isEmpty()){
+T currvalue = q.remove();
+If(currvalue==b){
+ Count++;
+}
+If(count>max)
+max=count;
+else{
+count = 0;
+}
+}
+if(max>1){
+return true;
+}
+return false;
+}
+
+Public static queue<T> inQueue(Queue<T> q){
+Queue<T> q1 = new Queue<T>();
+Queue<T> q2 = new Queue<T>();
+While(!q.isEmpty()){
+T x =q.remove;
+q1.insert(x);
+q2.insert(x);
+}
+While(!q2.isEmpty()){
+T a =q2.remove();
+q.insert(a);
+} 
+Return q1;
+}
+
+
+Public static Boolean isinQueue(Queue<Integer> q, int n){
+Queue<Integer> q1 = inqueue(q);
+While(!q1.isEmpty()){
+if(q1.remove==n)
+return true;
+}
+return false;
+}
+Public static void remove(Queue<Integer> q){
+Queue<Integer> temp = new Queue<Integer>();
+Int x;
+While(!q.isEmpty()){
+ x = q.remove();
+If(!isinQueue(temp,x)){
+temp.insert(x);
+}
+}
+while(!temp.isEmpty()){
+
+q.insert(temp.remove());
+}
+}
+
+
+
+
